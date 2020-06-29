@@ -1,0 +1,90 @@
+nav ul {
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+    float: right;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 250px;
+    padding-top: 25px;
+    position: relative;
+}
+
+nav a {
+    /* background-color: #644E90; */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size:30px;
+    
+}
+
+
+nav a:hover {
+    color: black;
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #644E90;
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+/* .bg-dark {
+    background-color: #644E90;
+} */
+
+nav a:hover::before {
+    width: 100%; 
+}
+
+
+.jumbotron {
+    background-image: url("https://media.giphy.com/media/hgpGAn0ohglHO/giphy.gif");
+    padding-bottom: 100px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-family: Kristen ITC;
+    font-size: 45px;
+    text-align: center;
+}
+
+body {
+    background-image: url("./images/bodybackgroun.png");
+    
+}
+
+.row{
+
+    margin-top:50px;
+}
+.btn{
+
+    background-color: #e7bd42;
+    color: white;
+    
+}
+
+h2 {
+    font-family: Kristen ITC;
+    font-size: 40px;
+}
+
+h3 {
+    font-family: Kristen ITC;
+    font-weight: bold;
+}
+
+.container {
+    text-align: center;
+}
