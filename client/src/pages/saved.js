@@ -1,8 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component}from 'react';
+
+ import api from "../utils/api"
 import Navbar from "../components/Navbar";
-function App() {
+import Title from "../components/title";
+class Saved extends Component {
+state={
+  favoriteIceCreams:[]
+}
+
+componentDidMount(){
+api.getFlavors().then(flavors => {
+  console.log(flavors.data)
+  this.setState({
+    favoriteIceCreams:flavors.data
+  })
+})
+}
+ render() {
   return (
     <div>
     {/* <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -17,15 +31,9 @@ function App() {
       <li><button><a href="/signup">Sign Up</a></button></li>
     </ul>
   </nav> */}
-  <Navbar> </Navbar>
+  <Navbar />
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Ice Cream Flavors</h1>
-
-  </div>
-</div>
-
+ <Title title = "Ice Cream Flavors"/> 
 
 
 <div class="container">
@@ -50,14 +58,17 @@ function App() {
     <div class="col-6">
       <h3>Your Favorite IceCream Flavors!</h3>
       <ul class="col-6">
-        {/* {{#each icecream}}
-        {{#unless devoured}} */}
-         <li class="row">
-         {/* <h5 class="col-5"> {{icecream_flavor}}</h5> */}
-    
-        </li>
-        {/* {{/unless}}
-        {{/each}} */}
+       {this.state.favoriteIceCreams.length > 0 ?  this.state.favoriteIceCreams.map(icecream => {
+         return (  
+          <li className="row">
+         
+            {icecream.icecream_flavor}
+         </li>
+         
+         )}): ""}
+
+
+       
       </ul>
 
     </div>
@@ -81,6 +92,9 @@ function App() {
 </div>
 </div>
   );
+ }
+
+ 
 }
 
-export default App;
+export default Saved;

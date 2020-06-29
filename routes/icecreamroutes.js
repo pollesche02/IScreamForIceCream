@@ -1,28 +1,29 @@
 var express = require("express");
 
 var router = express.Router();
-var db = require("../models/");
+var db = require("../models");
 
 // router.get("/", function (req, res) {
 //   res.redirect("/icecream");
 // });
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function (req, res) {
- db.Icecream.findAll()
-  .then(function (db) {
-    console.log(db)
-
-    var dbArray = db.map(elem=> {return {
-      id: elem.id,
-      icecream_flavor: elem.icecream_flavor,
-      devoured: elem.devoured
-    }})
-    var hbsObject = {
-      icecream: dbArray,
-    };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
+router.get("/api/flavors", function (req, res) {
+ console.log("getflavors")
+  db.Icecream.findAll()
+  .then(function (results) {
+    console.log(results)
+res.json(results)
+    // var dbArray = db.map(elem=> {return {
+    //   id: elem.id,
+    //   icecream_flavor: elem.icecream_flavor,
+    //   devoured: elem.devoured
+    // }})
+    // var hbsObject = {
+    //   icecream: dbArray,
+    // };
+    // console.log(hbsObject);
+    // res.render("index", hbsObject);
     //res.json(data)
   });
 });
