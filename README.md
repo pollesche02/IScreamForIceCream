@@ -1,4 +1,4 @@
-# ICECREAMSHOP 2
+# I Scream For Ice Cream
 
 _____________________________________________________________________________________________________
 
@@ -22,22 +22,22 @@ ________________________________________________________________________________
 # Technologies Used
 
 1. Express
-2. Handlebars
+2. ReactJs
 3. MySQL
 4. MySQL2
 5. Node
 6. Sequelize
 
+
 _______________________________________________________________________________________________________
 
 # What was learned
 
-I was able to learn how to change my code from using an ORM to using Sequelize. It was a bit challenging 
-because I had to change my thought process with my ORM and my Database so that it will still call all  the
+I was able to learn how to change my code from using handlebars to using ReactJS. It was a bit challenging because I had to change my thought process with my code and my Database so that it will still call all  the
 correct items and still run the same way.
 
 _______________________________________________________________________________________________________
 
 # Heroku Link
 
-Please visit my heroku link with my deployment here : https://aqueous-eyrie-30081.herokuapp.com/
+Please visit my heroku link with my deployment here : 
