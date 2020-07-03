@@ -3,16 +3,52 @@ import React, {Component}from 'react';
  import api from "../utils/api"
 import Navbar from "../components/Navbar";
 import Title from "../components/title";
+import "../assets/style.css";
 class Saved extends Component {
 state={
-  favoriteIceCreams:[]
+  favoriteIceCreams:[], 
+  icecream_flavor: "",
+  bestIceCream: []
+}
+handleSubmit = event => {
+  event.preventDefault()
+console.log(this.state.icecream_flavor)
+const iceCreamData = {
+  icecream_flavor:this.state.icecream_flavor,
+  devoured:false
 }
 
+api.savedFavorites(iceCreamData).then(results => {
+  console.log(results)
+  window.location.reload()
+})
+
+}
+
+handleChange = event => {
+   const {name, value} = event.target
+
+   this.setState({
+     [name]:value
+   })
+   console.log(value)
+}
+handleUpdate = id => {
+  alert("You have successfully choose your favorite flavor")
+  api.updatebestIceCream(id).then(results => {
+    window.location.reload()
+  })
+}
 componentDidMount(){
 api.getFlavors().then(flavors => {
   console.log(flavors.data)
   this.setState({
     favoriteIceCreams:flavors.data
+  })
+})
+api.getbestIceCream().then(icecream => {
+  this.setState({
+    bestIceCream:icecream.data
   })
 })
 }
@@ -46,8 +82,10 @@ api.getFlavors().then(flavors => {
 
       <div class="form-group">
        
-        <input placeholder="icecream Name" type="text" id="ice" name="name"></input>
-          <button class="btn" type="submit">Lets Add It To The List Of The Greats !</button>
+        <input placeholder="icecream Name" type="text" id="ice" value = {this.state.icecream_flavor} name="icecream_flavor"
+        onChange = {this.handleChange}
+        ></input>
+          <button class="btn" onClick = {this.handleSubmit} type="submit">Lets Add It To The List Of The Greats !</button>
       </div>
       
     </form>
@@ -76,6 +114,17 @@ api.getFlavors().then(flavors => {
     <div class="col-6">
       <h3>Best IceCream!</h3>
       <ul>
+
+{this.state.bestIceCream.length > 0 ? this.state.bestIceCream.map((icecream,index) =>{
+  return ( 
+  <li className="row">
+         
+  {icecream.icecream_flavor}
+  <button   onClick = {() =>  this.handleUpdate(icecream.id)}   class="change-devoured col-2" data-id={icecream.id} style = {{backgroundColor:"#e7bd42;"}}>Save</button> 
+</li>
+)
+}) : ""}
+
         {/* {{#each icecream}}
         {{#if devoured}} */}
         <li class="row">

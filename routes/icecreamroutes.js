@@ -6,11 +6,21 @@ var db = require("../models");
 // router.get("/", function (req, res) {
 //   res.redirect("/icecream");
 // });
-
+router.get("/api/bestIceCream",function(req, res){
+  db.Icecream.findAll({where:{
+    devoured:false
+  }}).then(function(results){
+    res.json(results)
+  })
+})
 // Create all our routes and set up logic within those routes where required.
 router.get("/api/flavors", function (req, res) {
  console.log("getflavors")
-  db.Icecream.findAll()
+  db.Icecream.findAll({
+    where:{
+      devoured:true
+    }
+  })
   .then(function (results) {
     console.log(results)
 res.json(results)
@@ -29,10 +39,9 @@ res.json(results)
 });
 
 router.post("/api/icecream", function (req, res) {
-  db.Icecream.create({
-    icecream_flavor: req.body.name,
-    devoured: true,
-  }).
+ console.log(req.body)
+ 
+  db.Icecream.create(req.body).
     then(function (result) {
       // Send back the ID of the new quote
       res.json({ id: result.insertId });
@@ -42,7 +51,7 @@ router.post("/api/icecream", function (req, res) {
 router.put("/api/icecream/:id", function (req, res) {
   db.Icecream.update(
     {
-      devoured: false,
+      devoured: true,
     },
     {
       where: {
@@ -50,11 +59,7 @@ router.put("/api/icecream/:id", function (req, res) {
       },
     }).then(
       function (result) {
-      if (result.changedRows == 0) {
-        return res.status(404).end();
-      } else {
-        res.status(200).end();
-      }
+      res.json(result)
     }
   );
 });

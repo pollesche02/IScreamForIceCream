@@ -5,5 +5,11 @@ export default {
     }, 
     getFlavors: function (){
         return axios.get("/api/flavors")
+    },
+    getbestIceCream:function(){
+        return axios.get("/api/bestIceCream")
+    },
+    updatebestIceCream: function(id){
+        return axios.put("/api/icecream/"+ id)
     }
 }
