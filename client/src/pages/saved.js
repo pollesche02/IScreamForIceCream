@@ -1,8 +1,7 @@
 import React, {Component}from 'react';
 
  import api from "../utils/api"
-import Navbar from "../components/Navbar";
-import Title from "../components/title";
+
 import "../assets/style.css";
 class Saved extends Component {
 state={
@@ -67,9 +66,7 @@ api.getbestIceCream().then(icecream => {
       <li><button><a href="/signup">Sign Up</a></button></li>
     </ul>
   </nav> */}
-  <Navbar />
 
- <Title title = "Ice Cream Flavors"/> 
 
 
 <div class="container">
