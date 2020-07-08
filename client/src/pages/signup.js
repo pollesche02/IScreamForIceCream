@@ -2,16 +2,16 @@ import React, { Component } from "react"
 class Signup extends Component {
     render (){
         return (
-            <div class="container">
-<form id="signup" name="signup" method="post" action="/signup">
-    <label for="email">Email Address</label>
-    <input class="text" name="email" type="email" />
-    <label for="firstname">Firstname</label>
-    <input name="firstname" type="text" />
-    <label for="lastname">Lastname</label>
-    <input name="lastname" type="text" />
-    <label for="password">Password</label>
-    <input name="password" type="password" />
+            <div class="container1">
+<form id="signup" name="signup" method="post" action="/signup"> <br />
+    <label for="firstname">Firstname</label>&nbsp;
+    <input name="firstname" type="text" />&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="lastname">Lastname</label>&nbsp;
+    <input name="lastname" type="text" />&nbsp;&nbsp;&nbsp;&nbsp;<br /> <br></br>
+    <label for="email">Email Address</label> &nbsp;
+    <input class="text" name="email" type="email" /> &nbsp;&nbsp;&nbsp;&nbsp;<br /> <br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<label for="password">Password</label>&nbsp;
+    <input name="password" type="password" /> <br></br><br></br>
     <input class="btn btn-warning" type="submit" value="Sign Up" />
 </form>
 

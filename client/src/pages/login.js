@@ -10,7 +10,7 @@ class App extends Component {
     }
     render() {
         return (
-            <div class="container">
+            <div class="container2">
             <form  id="signin" name="signin" method="post" action="signin/user">
             <div class="form-group">
             <label for="email">Email address</label>
