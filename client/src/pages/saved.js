@@ -73,7 +73,7 @@ api.getbestIceCream().then(icecream => {
 
   <div >
 
-    <h3>Add Your Favorite Flavors</h3>
+    <h3>Add Your Favorite Flavors</h3> <br />
     {/* <br> */}
     <form class="create-form">
 
@@ -81,7 +81,7 @@ api.getbestIceCream().then(icecream => {
        
         <input placeholder="icecream Name" type="text" id="ice" value = {this.state.icecream_flavor} name="icecream_flavor"
         onChange = {this.handleChange}
-        ></input>
+        ></input>  &nbsp; &nbsp;
           <button class="btn" onClick = {this.handleSubmit} type="submit">Lets Add It To The List Of The Greats !</button>
       </div>
       
@@ -116,8 +116,8 @@ api.getbestIceCream().then(icecream => {
   return ( 
   <li className="row">
          
-  {icecream.icecream_flavor}
-  <button   onClick = {() =>  this.handleUpdate(icecream.id)}   class="change-devoured col-2" data-id={icecream.id} style = {{backgroundColor:"#e7bd42;"}}>Save</button> 
+  {icecream.icecream_flavor}  &nbsp; &nbsp;
+  <button   onClick = {() =>  this.handleUpdate(icecream.id)}   class="change-devoured col-2" data-id={icecream.id} style = {{backgroundColor:"#e7bd42"}}>Save</button> 
 </li>
 )
 }) : ""}
