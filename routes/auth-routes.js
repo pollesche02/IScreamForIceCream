@@ -4,9 +4,9 @@ var db = require("../models");
 module.exports = function (app, passport) {
     // 
 
-   app.get("/",function(req,res){
-       res.send("signin_signup")
-   })
+//    app.get("/",function(req,res){
+//        res.send("signin_signup")
+//    })
    
     app.get("/logout", function (req, res) {
         console.log("Log Out Route Hit");
