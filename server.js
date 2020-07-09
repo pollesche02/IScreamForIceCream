@@ -16,13 +16,13 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 }
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 // Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("public"))
+// app.use(express.static("public"))
 // For passport
 app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secrets
  
