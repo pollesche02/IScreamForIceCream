@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use(express.static("public"))
 // For passport
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secrets
  
 app.use(passport.initialize());
  
