@@ -2,8 +2,9 @@ import React, { Component } from "react"
 class Specials extends Component {
     render (){
         return (
-            <div> 
-            Specials
+            <div class="container3"> 
+            <label for="specials"> Specials </label>
+            <div class="container4">
             <div class="row">
     <div class="col s12 m7">
       <div class="card">
@@ -14,6 +15,7 @@ class Specials extends Component {
         <div class="card-content">
           <p>I am a very simple card. I am good at containing small bits of information.
           I am convenient because I require little markup to use effectively.</p>
+        </div>
         </div>
         <div class="card-action">
           <a href="#">This is a link</a>
