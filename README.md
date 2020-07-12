@@ -40,4 +40,4 @@ ________________________________________________________________________________
 
 # Heroku Link
 
-Please visit my heroku link with my deployment here : 
+Please visit my heroku link with my deployment here : https://iscreamforicecream.herokuapp.com/savedflavors
